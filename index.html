@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bao Dinh (Gia-Bao Dinh Ho)</title>
+<meta name="description" content="Bao Dinh (Gia-Bao Dinh Ho). M.Sc. student in Natural Language Processing at MBZUAI. Learning to control language model behaviour in utilizing context.">
+<meta property="og:title" content="Bao Dinh (Gia-Bao Dinh Ho)">
+<meta property="og:description" content="I am studying how to control language model behaviour in utilizing context.">
+<meta property="og:image" content="https://giaabaoo.github.io/assets/img/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E1F33'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='18' text-anchor='middle' fill='%23fff'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Libertinus Serif";src:url(assets/fonts/libertinus-regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Libertinus Serif";src:url(assets/fonts/libertinus-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Libertinus Serif";src:url(assets/fonts/libertinus-bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --ink:#2A2A2A; --muted:#6B6470; --head:#2E1F33; --plum:#84305F;
+  --bed:#F8F3EC; --line:#E6DFD6;
+  --edu:#2F5D8C; --res:#84305F; --ind:#3F6B55; --sage:#3F6B55; --blue:#2F5D8C;
+  --serif:"Libertinus Serif",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff linear-gradient(90deg,var(--bed) max(366px,calc(50% - 174px)),#fff 0) no-repeat;color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.55}
+a{color:var(--plum);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--plum);outline-offset:3px;border-radius:3px}
+svg.i{width:14px;height:14px;fill:currentColor;flex:none}
+
+.page{max-width:1080px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:290px minmax(0,1fr);gap:88px}
+
+/* identity column */
+.id{position:static;top:0;align-self:start;padding:80px 0 48px;min-height:100vh;display:flex;flex-direction:column}
+.photo{width:92px;height:92px;border-radius:10px;object-fit:cover;display:block;margin-bottom:30px;border:1px solid var(--line);background:#fff}
+h1{font-family:var(--serif);font-weight:400;font-size:56px;line-height:.98;letter-spacing:-.015em;color:var(--head);margin:0 0 8px}
+.fullname{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:0 0 20px}
+.role{font-size:16.5px;line-height:1.5;color:var(--ink);margin:0 0 12px}
+.wave{display:inline-block;transform-origin:70% 75%;animation:wave 1.6s ease-in-out .4s 1}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(14deg)}20%{transform:rotate(-8deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
+.role a.org{color:inherit;text-decoration:underline;text-decoration-color:#CFC5B8;text-decoration-thickness:1px;text-underline-offset:3px}
+.role a.org:hover{color:var(--plum);text-decoration-color:var(--plum)}
+.role.prev{color:var(--muted)}
+.role:last-of-type{margin-bottom:30px}
+.role a.person{font-weight:700;color:var(--head);white-space:nowrap;text-decoration:underline;text-decoration-color:#DDB3CA;text-decoration-thickness:1px;text-underline-offset:3px}
+.role a.person:hover{color:var(--plum);text-decoration-color:var(--plum)}
+
+/* opening of the main column: what I study now, and why */
+.intro{margin:0 0 76px}
+.now{font-size:28px;line-height:1.35;color:var(--ink);margin:0 0 22px;min-height:2.7em;max-width:22em}
+.typed{color:var(--head)}
+.caret{display:inline-block;width:2px;height:1em;background:var(--plum);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite}
+.caret.done{animation:blink 1s steps(1) 3 forwards}
+@keyframes blink{50%{opacity:0}}
+.intro h2{margin-bottom:12px}
+.intro .h-why{margin-top:4px}
+.why{font-size:18.5px;line-height:1.6;color:#4a4450;margin:0;max-width:34em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.links{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.links a{font-family:var(--sans);font-weight:500;font-size:14.5px;display:inline-flex;align-items:center;gap:10px}
+.links a svg{color:var(--head)}
+.id-foot{margin-top:auto;padding-top:48px;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+
+/* main column */
+main{padding:80px 0 72px;min-width:0}
+h2{font-family:var(--sans);font-weight:600;font-size:17px;letter-spacing:-.01em;color:var(--head);margin:0 0 24px}
+section+section{margin-top:84px}
+.intro+section{margin-top:0}
+
+.paper{margin:0 0 64px}
+.paper:last-of-type{margin-bottom:0}
+.fig{display:block;background:var(--bed);border-radius:10px;padding:26px 30px;margin-bottom:22px}
+.fig img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.fig.wide{padding:22px}
+.fig.bare{background:none;padding:0}
+.fig.bare img{mix-blend-mode:normal}
+.fig.wide img{border-radius:4px}
+.paper h3{font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.3;color:var(--head);margin:0 0 8px;max-width:34em}
+.paper h3 a{color:inherit}
+.find{margin:0 0 10px;font-size:18px;max-width:36em}
+.authors{margin:0 0 12px;font-size:16px;color:var(--muted)}
+.authors b{color:var(--ink);font-weight:700}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-family:var(--sans);font-size:13.5px}
+.venue{font-weight:600;font-size:12.5px;padding:3px 9px;border-radius:999px;border:1px solid #B5C7BB;background:#F2F6F3;color:var(--sage)}
+.venue.review{border-color:#D9BF8C;background:#FAF5EA;color:#8C6218}
+.meta a{display:inline-flex;align-items:center;gap:6px;font-weight:500}
+.meta a svg{width:12px;height:12px}
+.earlier{margin-top:44px;padding-top:22px;border-top:1px solid var(--line)}
+.earlier h3{font-size:18px;font-weight:400;margin-bottom:6px}
+.earlier .authors{font-size:15px;margin-bottom:8px}
+
+/* path chart: bars on a shared time axis, labels travel with their bar */
+.key{display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--sans);font-size:13px;color:var(--muted);margin:-8px 0 18px}
+.key span{display:inline-flex;align-items:center;gap:8px}
+.key i{width:18px;height:6px;border-radius:3px;display:inline-block}
+.chart{position:relative}
+.tl-grid{position:absolute;inset:0 0 22px 0;pointer-events:none}
+.tl-grid i{position:absolute;top:0;bottom:0;border-left:1px solid #F1ECE6}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl-row{position:relative;height:66px}
+.tl-bar{position:absolute;bottom:12px;height:8px;border-radius:4px;min-width:7px}
+.edu .tl-bar{background:var(--edu)} .res .tl-bar{background:var(--res)} .ind .tl-bar{background:var(--ind)}
+.edu .tl-when{color:var(--edu)} .res .tl-when{color:var(--res)} .ind .tl-when{color:var(--ind)}
+.tl-bar.ongoing{background:linear-gradient(90deg,var(--edu) 70%,rgba(47,93,140,.15))}
+.tl-label{position:absolute;bottom:26px;line-height:1.3;white-space:nowrap;max-width:100%}
+.tl-label.end{text-align:right}
+.tl-place{display:block;font-size:16.5px;color:var(--ink)}
+.tl-sub{display:block;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+.tl-when{color:var(--head);font-weight:500;font-variant-numeric:tabular-nums}
+.tl-ticks{position:relative;height:22px;font-family:var(--sans);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;border-top:1px solid var(--line);margin-top:2px}
+.tl-ticks span{position:absolute;top:5px;transform:translateX(-50%)}
+
+/* awards */
+.aw{list-style:none;margin:0;padding:0}
+.more{margin:0;display:grid;grid-template-columns:140px 1fr;gap:12px 24px}
+.more dt{font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--head);padding-top:3px}
+.more dd{margin:0;font-size:17.5px;line-height:1.6}
+.aw li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:6px 0;font-size:17px}
+.aw .y{font-family:var(--sans);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+
+@media (min-width:901px){.id{position:sticky;height:100vh;min-height:0;overflow-y:auto;scrollbar-width:none}.id::-webkit-scrollbar{display:none}}
+@media (max-width:900px){
+  body{background:#fff}
+  .page{grid-template-columns:1fr;gap:0;padding:0 20px}
+  .id{position:static;min-height:0;background:var(--bed);margin:0 -20px;padding:44px 20px 30px}
+  .photo{width:76px;height:76px;margin-bottom:22px}
+  .now{font-size:23px;min-height:4.1em}
+  .intro{margin-bottom:56px}
+  h1{font-size:46px}
+  .links{grid-auto-flow:column;justify-content:start;gap:22px}
+  .id-foot{display:none}
+  main{padding-top:48px}
+  .fig{padding:14px 16px}
+  .fig.wide{padding:12px}
+  .tl-row{height:auto;padding:12px 0 22px}
+  .tl-label{position:static;white-space:normal;text-align:left!important;display:block}
+  .tl-bar{bottom:8px}
+  .more{grid-template-columns:1fr;gap:4px}
+  .more dd{margin-bottom:14px}
+  section+section{margin-top:64px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<aside class="id">
+  <img class="photo" src="assets/img/photo.jpg" alt="Bao Dinh" width="92" height="92">
+  <h1>Bao Dinh</h1>
+  <p class="fullname">Gia-Bao Dinh Ho</p>
+  <p class="role">Hi <span class="wave" role="img" aria-label="waving hand">👋</span> I am a second-year M.Sc. student in Natural Language Processing at <a class="org" href="https://mbzuai.ac.ae/">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</a>, advised by <a class="person" href="https://eltimster.github.io/www/">Prof. Timothy Baldwin</a> and <a class="person" href="https://sites.google.com/view/masahirokaneko/english">Dr. Masahiro Kaneko</a>.</p>
+  <p class="role">During summer 2026, I was fortunate to visit the <a class="org" href="https://www.copenlu.com/">CopeNLU</a> lab at the University of Copenhagen, under the supervision of <a class="person" href="https://isabelleaugenstein.github.io/">Prof. Isabelle Augenstein</a>.</p>
+  <p class="role prev">Previously in Vietnam, I was an AI Research Resident at <a class="org" href="https://fptsoftware.com/">FPT Software AI Center</a> with <a class="person" href="https://bdqnghi.github.io/">Dr. Nghi Bui</a>, and a research assistant at <a class="org" href="https://vinuni.edu.vn/">VinUniversity</a> with <a class="person" href="https://bayesian-models.org/">Prof. Wray Buntine</a>.</p>
+  <p class="role prev">I first got into research in the last year of my undergraduate studies at HCMUS, motivated by <a class="person" href="https://scholar.google.com/citations?user=lt2ATkkAAAAJ&amp;hl=en">Prof. Minh-Triet Tran</a>.</p>
+  <ul class="links">
+    <li><a href="assets/GiaBaoDinhHo_CV.pdf" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>CV</a></li>
+    <li><a href="mailto:bao.dinh@mbzuai.ac.ae"><svg class="i" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>Email</a></li>
+    <li><a href="https://github.com/giaabaoo"><svg class="i" viewBox="0 0 496 512"><path d="M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>GitHub</a></li>
+  </ul>
+  <div class="id-foot">Updated October 2026</div>
+</aside>
+
+<main>
+  <section class="intro" aria-label="Research interests">
+    <h2>Current work</h2>
+    <p class="now"><span class="sr">I am studying how to control language model behaviour in utilizing context.</span><span aria-hidden="true">I am <span class="typed" id="typed" data-text="studying how to control language model behaviour in utilizing context."></span><span class="caret" id="caret"></span></span></p>
+    <h2 class="h-why">Broad research interests</h2>
+    <p class="why">As language models become more capable, it matters more that we can understand and correct their behaviour so that it stays aligned with human values. This is what draws me to alignment, which I work on with a focus on AI safety in Prof. Timothy Baldwin's group at MBZUAI. I am curious how certain behaviours are represented in a model's latent space, and whether mechanistic control and causal representation learning can give us reliable handles on them.</p>
+  </section>
+
+  <section aria-labelledby="h-research">
+    <h2 id="h-research">Papers</h2>
+
+    <article class="paper">
+      <a class="fig bare" href="https://context-gcg.github.io" aria-label="Project page"><img src="assets/img/gcg_search.gif" alt="A recorded GCG search on Mistral-7B: the 20-token suffix changes over 100 steps, the loss falls, and the answer turns to Asia." width="900" height="930"></a>
+      <h3><a href="https://arxiv.org/abs/2610.26236">Shaping the Document, Not the Model: Optimized Suffixes for Context Following</a></h3>
+      <p class="find">A 20-token suffix appended to a passage makes the model answer from it on nearly all items it resisted, with the model unchanged.</p>
+      <p class="authors"><b>Gia-Bao Dinh Ho</b>, Sekh Mainul Islam, Masahiro Kaneko, Timothy Baldwin, Isabelle Augenstein</p>
+      <div class="meta">
+        <span class="venue review">Preprint, under review, 2026</span>
+        <a href="https://arxiv.org/abs/2610.26236"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>arXiv</a>
+        <a href="https://context-gcg.github.io"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>project</a>
+        <a href="https://github.com/giaabaoo/context-gcg"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>code</a>
+      </div>
+    </article>
+
+    <article class="paper">
+      <a class="fig bare" href="https://giaabaoo.github.io/TPD_website/" aria-label="Project page"><img src="assets/img/mtp.gif" alt="Six utterances from a conversation; the fifth is the turning point, caused by Penny mentioning her ex, and each speaker's feeling and behaviour changes before and after it." width="960" height="666" loading="lazy"></a>
+      <h3><a href="https://aclanthology.org/2024.acl-short.30">MTP: A Dataset for Multi-Modal Turning Points in Casual Conversations</a></h3>
+      <p class="find">Human-annotated moments where emotions, decisions or perspectives shift in a conversation, with timestamps and visual-textual evidence.</p>
+      <p class="authors"><b>Gia-Bao Dinh Ho</b>, Chang Wei Tan, Zahra Zamanzadeh Darban, Mahsa Salehi, Reza Haffari, Wray Buntine</p>
+      <div class="meta">
+        <span class="venue">ACL 2024</span>
+        <a href="https://aclanthology.org/2024.acl-short.30"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>paper</a>
+        <a href="https://giaabaoo.github.io/TPD_website/"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>project</a>
+        <a href="https://huggingface.co/datasets/giaabaoo/MTP_Dataset"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>dataset</a>
+      </div>
+    </article>
+
+    <article class="paper earlier">
+      <h3>HCMUS at MediaEval 2021: Ensembles of Action Recognition Networks with Prior Knowledge for Table Tennis Strokes Classification Task</h3>
+      <p class="authors">Trong-Tung Nguyen, Thanh-Son Nguyen, <b>Gia-Bao Dinh Ho</b>, Hai-Dang Nguyen, Minh-Triet Tran</p>
+      <div class="meta"><span class="venue">MediaEval 2021 Workshop</span></div>
+    </article>
+  </section>
+
+  <section aria-labelledby="h-path">
+    <h2 id="h-path">Path</h2>
+    <div class="key"><span><i style="background:var(--edu)"></i>Study</span><span><i style="background:var(--res)"></i>Research</span><span><i style="background:var(--ind)"></i>Industry</span></div>
+    <div class="chart">
+      <div class="tl-grid"><i style="left:5.26%"></i><i style="left:15.79%"></i><i style="left:26.32%"></i><i style="left:36.84%"></i><i style="left:47.37%"></i><i style="left:57.89%"></i><i style="left:68.42%"></i><i style="left:78.95%"></i><i style="left:89.47%"></i></div>
+      <ol class="tl">
+        <li class="tl-row edu"><span class="tl-bar" style="left:1.79%;width:40.32%"></span><span class="tl-label" style="left:1.79%"><span class="tl-place">Ho Chi Minh City University of Science</span><span class="tl-sub"><span class="tl-when">2017 – 2021</span> B.Sc. in Computer Science, APCS</span></span></li>
+        <li class="tl-row ind"><span class="tl-bar" style="left:54.42%;width:2.63%"></span><span class="tl-label end" style="right:42.95%"><span class="tl-place">VinBigData</span><span class="tl-sub"><span class="tl-when">2022</span> AI Engineer Resident</span></span></li>
+        <li class="tl-row ind"><span class="tl-bar" style="left:57.89%;width:1.79%"></span><span class="tl-label end" style="right:40.32%"><span class="tl-place">VinBrain</span><span class="tl-sub"><span class="tl-when">2023</span> AI Engineer Intern</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:58.74%;width:7.89%"></span><span class="tl-label end" style="right:33.37%"><span class="tl-place">VinUniversity</span><span class="tl-sub"><span class="tl-when">2023</span> Research Assistant, with Prof. Wray Buntine and Dr. Mahsa Salehi</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:78.11%;width:2.63%"></span><span class="tl-label end" style="right:19.26%"><span class="tl-place">FPT Software AI Center</span><span class="tl-sub"><span class="tl-when">2024 – 2025</span> AI Research Resident, with Dr. Nghi Bui</span></span></li>
+        <li class="tl-row edu"><span class="tl-bar ongoing" style="left:86.00%;width:11.89%"></span><span class="tl-label end" style="right:2.11%"><span class="tl-place">MBZUAI</span><span class="tl-sub"><span class="tl-when">2025 – now</span> M.Sc. in NLP, with Prof. Timothy Baldwin and Dr. Masahiro Kaneko</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:93.89%;width:3.26%"></span><span class="tl-label end" style="right:2.84%"><span class="tl-place">University of Copenhagen, CopeNLU</span><span class="tl-sub"><span class="tl-when">2026</span> Visiting Student, with Prof. Isabelle Augenstein</span></span></li>
+      </ol>
+      <div class="tl-ticks"><span style="left:5.26%">2018</span><span style="left:26.32%">2020</span><span style="left:47.37%">2022</span><span style="left:68.42%">2024</span><span style="left:89.47%">2026</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-awards">
+    <h2 id="h-awards">Grants and awards</h2>
+    <ul class="aw">
+      <li><span class="y">2026</span><span>DDSA Visit Grant, Danish Data Science Academy</span></li>
+      <li><span class="y">2024</span><span>Diversity and Inclusion Award, ACL 2024</span></li>
+      <li><span class="y">2022</span><span>VINIF Scholarship, Vingroup Innovation Foundation</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-more">
+    <h2 id="h-more">More about me</h2>
+    <dl class="more">
+      <dt>How I work</dt>
+      <dd>I take my time to understand a problem properly, and once I do, I present it well. I like novel problems with near-term applications: I start from a careful problem formulation and build the method to address it step by step. I pay attention to detail, and I write the way I like to read: neat, efficient and minimal.</dd>
+      <dt>Outside research</dt>
+      <dd>Walking in nature, travelling, and soccer. My idol is Toni Kroos, who made simplicity an art: world-class play with the least effort needed.</dd>
+    </dl>
+  </section>
+</main>
+
+</div>
+<script>
+(function(){
+  var el=document.getElementById('typed'), caret=document.getElementById('caret');
+  var text=el.getAttribute('data-text');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=text;caret.classList.add('done');return;}
+  var i=0;
+  function step(){
+    el.textContent=text.slice(0,++i);
+    if(i<text.length){setTimeout(step,i===1?0:38+Math.random()*42);}
+    else{caret.classList.add('done');}
+  }
+  setTimeout(step,700);
+})();
+</script>
+</body>
+</html>
