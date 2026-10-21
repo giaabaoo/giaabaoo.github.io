@@ -118,6 +118,11 @@ section+section{margin-top:84px}
 .tl-cursor{position:absolute;top:0;bottom:22px;width:2px;margin-left:-1px;background:var(--plum);border-radius:1px;opacity:0;pointer-events:none;transition:opacity .4s}
 .tl-cursor.show{opacity:.85}
 
+.chart.anim .ch{opacity:0;transition:opacity .18s}
+.chart.anim .ch.on{opacity:1}
+.chart.anim .tl-bar{opacity:0;transition:width .8s cubic-bezier(.22,.8,.28,1),opacity .2s}
+.chart.anim .tl-bar.grow{opacity:1}
+
 /* awards */
 .aw{list-style:none;margin:0;padding:0}
 .more{margin:0;display:grid;grid-template-columns:140px 1fr;gap:12px 24px}
@@ -265,7 +270,6 @@ section+section{margin-top:84px}
     <div class="key"><span><i style="background:var(--edu)"></i>Study</span><span><i style="background:var(--res)"></i>Research</span><span><i style="background:var(--ind)"></i>Industry</span></div>
     <div class="chart" id="chart">
       <div class="tl-grid"><i style="left:5.26%"></i><i style="left:15.79%"></i><i style="left:26.32%"></i><i style="left:36.84%"></i><i style="left:47.37%"></i><i style="left:57.89%"></i><i style="left:68.42%"></i><i style="left:78.95%"></i><i style="left:89.47%"></i></div>
-      <div class="tl-cursor" id="tlcursor" aria-hidden="true"></div>
       <ol class="tl">
         <li class="tl-row edu"><span class="tl-bar" style="left:1.79%;width:40.32%"></span><span class="tl-label" style="left:1.79%"><span class="tl-place">Ho Chi Minh City University of Science</span><span class="tl-sub"><span class="tl-when">2017 – 2021</span> B.Sc. in Computer Science, APCS</span></span></li>
         <li class="tl-row ind"><span class="tl-bar" style="left:54.42%;width:2.63%"></span><span class="tl-label end" style="right:42.95%"><span class="tl-place">VinBigData</span><span class="tl-sub"><span class="tl-when">2022</span> AI Engineer Resident</span></span></li>
@@ -314,37 +318,34 @@ section+section{margin-top:84px}
   setTimeout(step,700);
 })();
 
-/* Path chart: a time cursor sweeps from 2017 to now; each bar grows as the cursor passes it. Runs once, when the chart comes into view. */
+/* Path chart: rows play in order; each bar grows from its start date while its label types in. Runs once, when the chart comes into view. */
 (function(){
   var chart=document.getElementById('chart'); if(!chart) return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-  var cur=document.getElementById('tlcursor');
   var rows=[].map.call(chart.querySelectorAll('.tl-row'),function(r){
-    var bar=r.querySelector('.tl-bar'), lab=r.querySelector('.tl-label');
-    var L=parseFloat(bar.style.left), W=parseFloat(bar.style.width);
-    return {bar:bar,lab:lab,L:L,W:W};
-  });
-  var ticks=[].map.call(chart.querySelectorAll('.tl-ticks span'),function(t){return {el:t,x:parseFloat(t.style.left)};});
-  var end=Math.max.apply(null,rows.map(function(r){return r.L+r.W;}));
-  rows.forEach(function(r){r.bar.style.width='0%';r.bar.style.opacity=0;r.lab.style.opacity=0;r.lab.style.transition='opacity .45s';});
-  function run(){
-    var T=3200, t0=null; cur.classList.add('show');
-    function frame(now){
-      if(t0===null) t0=now;
-      var k=Math.min(1,(now-t0)/T), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2, x=e*end;
-      cur.style.left=x+'%';
-      rows.forEach(function(r){
-        var p=Math.max(0,Math.min(1,(x-r.L)/r.W));
-        r.bar.style.width=(r.W*p)+'%';
-        if(x>=r.L){ r.lab.style.opacity=1; r.bar.style.opacity=1; }
+    var bar=r.querySelector('.tl-bar'), lab=r.querySelector('.tl-label'), chars=[];
+    /* wrap every character so the label keeps its final layout while it types in */
+    (function walk(n){
+      [].slice.call(n.childNodes).forEach(function(c){
+        if(c.nodeType===3){
+          var f=document.createDocumentFragment();
+          c.textContent.split('').forEach(function(ch){var sp=document.createElement('span');sp.className='ch';sp.textContent=ch;f.appendChild(sp);chars.push(sp);});
+          n.replaceChild(f,c);
+        } else walk(c);
       });
-      ticks.forEach(function(t){ if(x>=t.x) t.el.classList.add('on'); });
-      if(k<1) requestAnimationFrame(frame);
-      else setTimeout(function(){cur.classList.remove('show');ticks.forEach(function(t){t.el.classList.remove('on');});},600);
-    }
-    requestAnimationFrame(frame);
+    })(lab);
+    var W=bar.style.width; bar.style.width='0%';
+    return {bar:bar,W:W,chars:chars};
+  });
+  chart.classList.add('anim');
+  function play(i){
+    if(i>=rows.length) return;
+    var r=rows[i], n=r.chars.length, per=Math.max(9,Math.min(16,620/n));
+    r.bar.classList.add('grow'); r.bar.style.width=r.W;
+    r.chars.forEach(function(c,j){ setTimeout(function(){c.classList.add('on');},j*per); });
+    setTimeout(function(){play(i+1);},Math.min(n*per,520)+120);
   }
-  var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); run(); } },{threshold:.35});
+  var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); setTimeout(function(){play(0);},150); } },{threshold:.3});
   io.observe(chart);
 })();
 
