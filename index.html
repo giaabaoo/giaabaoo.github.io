@@ -181,14 +181,14 @@ section+section{margin-top:84px}
 /* phone: photo and name side by side, links in one row, then the intro */
 @media (max-width:900px){
   .id{padding:36px 20px 30px}
-  .head{display:grid;grid-template-columns:150px 1fr;column-gap:20px;row-gap:20px;align-items:end;margin-bottom:26px}
-  .head .photo{width:150px;height:200px;border-radius:13px;border-width:3px}
+  .head{display:grid;grid-template-columns:minmax(0,56fr) minmax(0,44fr);column-gap:20px;row-gap:20px;align-items:end;margin-bottom:26px}
+  .head .photo{width:100%;height:auto;aspect-ratio:3/4;border-radius:14px;border-width:3px}
   .side{display:contents}
   .side>div{padding-bottom:4px}
-  .side h1{font-size:44px;line-height:.98;margin:0 0 10px}
+  .side h1{font-size:clamp(40px,13vw,54px);line-height:.98;margin:0 0 10px}
   .side .fullname{margin:0}
-  .side .links{grid-column:1/-1;grid-auto-flow:column;justify-content:start;gap:10px}
-  .side .links a{padding:7px 13px 7px 11px;border:1px solid #E3D6C8;border-radius:999px;background:#fff;font-size:14px;gap:8px}
+  .side .links{grid-column:1/-1;grid-auto-flow:row;grid-template-columns:repeat(3,1fr);gap:10px}
+  .side .links a{display:flex;justify-content:center;padding:8px 10px;border:1px solid #E3D6C8;border-radius:999px;background:#fff;font-size:14px;gap:8px}
   .side .links a:hover{text-decoration:none;border-color:var(--plum)}
   .role{font-size:17px}
   .updated{margin-top:64px}
