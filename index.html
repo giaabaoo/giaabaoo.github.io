@@ -139,10 +139,6 @@ section+section{margin-top:84px}
   h1{font-size:46px}
   .links{grid-auto-flow:column;justify-content:start;gap:22px}
   .id-foot{display:none}
-  .side h1{margin-bottom:8px}
-  .side .links{grid-auto-flow:row;gap:8px}
-  .side h1{font-size:42px}
-  .head{gap:22px;margin-bottom:26px}
   .updated{margin-top:64px}
   main{padding-top:48px}
   .fig{padding:14px 16px}
@@ -166,6 +162,14 @@ body{background:#fff linear-gradient(90deg,var(--bed) max(476px,calc(50% - 152px
 .side h1{margin-bottom:12px}
 .side .fullname{margin:0}
 .updated{margin:96px 0 0;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+@media (max-width:900px){
+  .head{display:grid;grid-template-columns:136px 1fr;column-gap:20px;row-gap:22px;align-items:end;margin-bottom:24px}
+  .head .photo{width:136px;height:170px;border-radius:12px;border-width:3px}
+  .side{display:contents}
+  .side h1{font-size:40px;line-height:1;margin:0 0 8px}
+  .side .fullname{margin:0 0 2px}
+  .side .links{grid-column:1/-1;grid-auto-flow:column;justify-content:start;gap:24px;padding-top:2px}
+}
 </style>
 </head>
 <body>
