@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://giaabaoo.github.io/sitemap.xml
