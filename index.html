@@ -178,19 +178,19 @@ section+section{margin-top:84px}
   .id::-webkit-scrollbar{display:none}
 }
 
-/* phone: photo and name side by side, links in one row, then the intro */
+/* phone: centred identity card (photo, name, links), then the intro */
 @media (max-width:900px){
-  .id{padding:36px 20px 30px}
-  .head{display:grid;grid-template-columns:minmax(0,56fr) minmax(0,44fr);column-gap:20px;row-gap:20px;align-items:end;margin-bottom:26px}
-  .head .photo{width:100%;height:auto;aspect-ratio:3/4;border-radius:14px;border-width:3px}
-  .side{display:contents}
-  .side>div{padding-bottom:4px}
-  .side h1{font-size:clamp(40px,13vw,54px);line-height:.98;margin:0 0 10px}
-  .side .fullname{margin:0}
-  .side .links{grid-column:1/-1;grid-auto-flow:row;grid-template-columns:repeat(3,1fr);gap:10px}
-  .side .links a{display:flex;justify-content:center;padding:8px 10px;border:1px solid #E3D6C8;border-radius:999px;background:#fff;font-size:14px;gap:8px}
+  .id{padding:40px 20px 40px}
+  .head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:30px}
+  .head .photo{width:min(58vw,232px);height:auto;aspect-ratio:3/4;border-radius:16px;border-width:3px;margin:0 0 22px}
+  .side{display:flex;flex-direction:column;align-items:center;gap:0;padding:0}
+  .side h1{font-size:44px;line-height:1;margin:0 0 8px}
+  .side h1 br{display:none}
+  .side .fullname{margin:0 0 20px}
+  .side .links{grid-auto-flow:column;justify-content:center;gap:10px}
+  .side .links a{padding:7px 14px 7px 12px;border:1px solid #E3D6C8;border-radius:999px;background:#fff;font-size:14px;gap:8px}
   .side .links a:hover{text-decoration:none;border-color:var(--plum)}
-  .role{font-size:17px}
+  .role{font-size:17px;margin-bottom:14px}
   .updated{margin-top:64px}
   .tl-row{padding:6px 0 20px}
   .tl-bar{bottom:6px;height:7px}
@@ -202,7 +202,7 @@ section+section{margin-top:84px}
 
 <aside class="id">
   <div class="head">
-  <img class="photo" src="assets/img/photo.jpg" alt="Bao Dinh" width="221" height="295">
+  <img class="photo" src="assets/img/photo.jpg?v=3" alt="Bao Dinh" width="221" height="295">
   <div class="side">
     <div>
   <h1>Bao<br> Dinh</h1>
@@ -271,13 +271,13 @@ section+section{margin-top:84px}
     <div class="chart" id="chart">
       <div class="tl-grid"><i style="left:5.26%"></i><i style="left:15.79%"></i><i style="left:26.32%"></i><i style="left:36.84%"></i><i style="left:47.37%"></i><i style="left:57.89%"></i><i style="left:68.42%"></i><i style="left:78.95%"></i><i style="left:89.47%"></i></div>
       <ol class="tl">
-        <li class="tl-row edu"><span class="tl-bar" style="left:1.79%;width:40.32%"></span><span class="tl-label" style="left:1.79%"><span class="tl-place">Ho Chi Minh City University of Science</span><span class="tl-sub"><span class="tl-when">2017 – 2021</span> B.Sc. in Computer Science, APCS</span></span></li>
-        <li class="tl-row ind"><span class="tl-bar" style="left:54.42%;width:2.63%"></span><span class="tl-label end" style="right:42.95%"><span class="tl-place">VinBigData</span><span class="tl-sub"><span class="tl-when">2022</span> AI Engineer Resident</span></span></li>
-        <li class="tl-row ind"><span class="tl-bar" style="left:57.89%;width:1.79%"></span><span class="tl-label end" style="right:40.32%"><span class="tl-place">VinBrain</span><span class="tl-sub"><span class="tl-when">2023</span> AI Engineer Intern</span></span></li>
-        <li class="tl-row res"><span class="tl-bar" style="left:58.74%;width:7.89%"></span><span class="tl-label end" style="right:33.37%"><span class="tl-place">VinUniversity</span><span class="tl-sub"><span class="tl-when">2023</span> Research Assistant, with Prof. Wray Buntine and Dr. Mahsa Salehi</span></span></li>
-        <li class="tl-row res"><span class="tl-bar" style="left:78.11%;width:2.63%"></span><span class="tl-label end" style="right:19.26%"><span class="tl-place">FPT Software AI Center</span><span class="tl-sub"><span class="tl-when">2024 – 2025</span> AI Research Resident, with Dr. Nghi Bui</span></span></li>
-        <li class="tl-row edu"><span class="tl-bar ongoing" style="left:86.00%;width:11.89%"></span><span class="tl-label end" style="right:2.11%"><span class="tl-place">MBZUAI</span><span class="tl-sub"><span class="tl-when">2025 – now</span> M.Sc. in NLP, with Prof. Timothy Baldwin and Dr. Masahiro Kaneko</span></span></li>
-        <li class="tl-row res"><span class="tl-bar" style="left:93.89%;width:3.26%"></span><span class="tl-label end" style="right:2.84%"><span class="tl-place">University of Copenhagen, CopeNLU</span><span class="tl-sub"><span class="tl-when">2026</span> Visiting Student, with Prof. Isabelle Augenstein</span></span></li>
+        <li class="tl-row edu"><span class="tl-bar" style="left:1.79%;width:40.32%"></span><span class="tl-label" style="left:1.79%"><span class="tl-place">Ho Chi Minh City University of Science</span><span class="tl-sub">B.Sc. in Computer Science</span></span></li>
+        <li class="tl-row ind"><span class="tl-bar" style="left:54.42%;width:2.63%"></span><span class="tl-label end" style="right:42.95%"><span class="tl-place">VinBigData</span><span class="tl-sub">AI Engineer Resident</span></span></li>
+        <li class="tl-row ind"><span class="tl-bar" style="left:57.89%;width:1.79%"></span><span class="tl-label end" style="right:40.32%"><span class="tl-place">VinBrain</span><span class="tl-sub">AI Engineer Intern</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:58.74%;width:7.89%"></span><span class="tl-label end" style="right:33.37%"><span class="tl-place">VinUniversity</span><span class="tl-sub">Research Assistant</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:78.11%;width:2.63%"></span><span class="tl-label end" style="right:19.26%"><span class="tl-place">FPT Software AI Center</span><span class="tl-sub">AI Research Resident</span></span></li>
+        <li class="tl-row edu"><span class="tl-bar ongoing" style="left:86.00%;width:11.89%"></span><span class="tl-label end" style="right:2.11%"><span class="tl-place">MBZUAI</span><span class="tl-sub">M.Sc. in Natural Language Processing</span></span></li>
+        <li class="tl-row res"><span class="tl-bar" style="left:93.89%;width:3.26%"></span><span class="tl-label end" style="right:2.84%"><span class="tl-place">University of Copenhagen, CopeNLU</span><span class="tl-sub">Visiting Student</span></span></li>
       </ol>
       <div class="tl-ticks"><span style="left:5.26%">2018</span><span style="left:26.32%">2020</span><span style="left:47.37%">2022</span><span style="left:68.42%">2024</span><span style="left:89.47%">2026</span></div>
     </div>
