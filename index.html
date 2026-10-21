@@ -37,7 +37,7 @@ svg.i{width:14px;height:14px;fill:currentColor;flex:none}
 
 /* identity column */
 .id{position:static;top:0;align-self:start;padding:80px 0 48px;min-height:100vh;display:flex;flex-direction:column}
-.photo{width:236px;height:295px;border-radius:18px;object-fit:cover;object-position:50% 30%;display:block;margin-bottom:34px;background:#E9E1D6;border:4px solid #fff;box-shadow:0 1px 2px rgba(46,31,51,.06),0 14px 34px -12px rgba(46,31,51,.28)}
+.photo{width:221px;height:295px;border-radius:18px;object-fit:cover;display:block;margin-bottom:34px;background:#E9E1D6;border:4px solid #fff;box-shadow:0 1px 2px rgba(46,31,51,.06),0 14px 34px -12px rgba(46,31,51,.28)}
 h1{font-family:var(--serif);font-weight:400;font-size:56px;line-height:.98;letter-spacing:-.015em;color:var(--head);margin:0 0 8px}
 .fullname{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:0 0 20px}
 .role{font-size:16.5px;line-height:1.5;color:var(--ink);margin:0 0 12px}
@@ -128,7 +128,6 @@ section+section{margin-top:84px}
 .aw li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:6px 0;font-size:17px}
 .aw .y{font-family:var(--sans);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
 
-@media (min-width:901px){.id{position:sticky}}
 @media (max-width:900px){
   body{background:#fff}
   .page{grid-template-columns:1fr;gap:0;padding:0 20px}
@@ -151,24 +150,45 @@ section+section{margin-top:84px}
   section+section{margin-top:64px}
 }
 
-@media (min-width:901px){
-.page{max-width:1240px;grid-template-columns:400px minmax(0,1fr);gap:72px}
-body{background:#fff linear-gradient(90deg,var(--bed) max(476px,calc(50% - 152px)),#fff 0) no-repeat}
-.id{padding:64px 0 40px}
-}
+/* identity block: photo with name and links beside it */
 .head{display:flex;gap:26px;margin-bottom:30px}
 .head .photo{margin:0;flex:none}
 .side{display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:4px 0 2px;min-width:0}
 .side h1{margin-bottom:12px}
 .side .fullname{margin:0}
 .updated{margin:96px 0 0;font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+
+/* desktop: the left panel is fixed to the screen; only the right column scrolls */
+@media (min-width:901px){
+  .page{max-width:1240px;grid-template-columns:400px minmax(0,1fr);gap:72px}
+  body{background:#fff linear-gradient(90deg,var(--bed) max(476px,calc(50% - 152px)),#fff 0) no-repeat}
+  .id{position:sticky;top:0;height:100vh;min-height:0;overflow:hidden;justify-content:center;padding:clamp(28px,6vh,72px) 0 clamp(24px,5vh,64px)}
+  .head{margin-bottom:clamp(30px,4.5vh,52px)}
+  .role{font-size:clamp(16.5px,1.85vh,19px)}
+  .role,.role:last-of-type{margin-bottom:clamp(12px,1.9vh,22px)}
+  .role:last-of-type{margin-bottom:0}
+}
+@media (min-width:901px) and (max-height:690px){
+  .id{overflow-y:auto;scrollbar-width:none}
+  .id::-webkit-scrollbar{display:none}
+}
+
+/* phone: photo and name side by side, links in one row, then the intro */
 @media (max-width:900px){
-  .head,.side{display:contents}
-  .head .photo{width:168px;height:210px;border-radius:14px;border-width:3px;margin:0 0 26px}
-  .side h1{font-size:46px;margin:0 0 8px}
-  .side h1 br{display:none}
-  .side .fullname{margin:0 0 20px}
-  .side .links{order:1}
+  .id{padding:36px 20px 30px}
+  .head{display:grid;grid-template-columns:150px 1fr;column-gap:20px;row-gap:20px;align-items:end;margin-bottom:26px}
+  .head .photo{width:150px;height:200px;border-radius:13px;border-width:3px}
+  .side{display:contents}
+  .side>div{padding-bottom:4px}
+  .side h1{font-size:44px;line-height:.98;margin:0 0 10px}
+  .side .fullname{margin:0}
+  .side .links{grid-column:1/-1;grid-auto-flow:column;justify-content:start;gap:10px}
+  .side .links a{padding:7px 13px 7px 11px;border:1px solid #E3D6C8;border-radius:999px;background:#fff;font-size:14px;gap:8px}
+  .side .links a:hover{text-decoration:none;border-color:var(--plum)}
+  .role{font-size:17px}
+  .updated{margin-top:64px}
+  .tl-row{padding:6px 0 20px}
+  .tl-bar{bottom:6px;height:7px}
 }
 </style>
 </head>
@@ -177,7 +197,7 @@ body{background:#fff linear-gradient(90deg,var(--bed) max(476px,calc(50% - 152px
 
 <aside class="id">
   <div class="head">
-  <img class="photo" src="assets/img/photo.jpg" alt="Bao Dinh" width="236" height="295">
+  <img class="photo" src="assets/img/photo.jpg" alt="Bao Dinh" width="221" height="295">
   <div class="side">
     <div>
   <h1>Bao<br> Dinh</h1>
@@ -280,15 +300,6 @@ body{background:#fff linear-gradient(90deg,var(--bed) max(476px,calc(50% - 152px
 </main>
 
 </div>
-<script>
-/* left panel: scroll with the page until its last line is in view, then stay put */
-(function(){
-  var id=document.querySelector('.id');
-  function pin(){id.style.top=innerWidth>900?Math.min(0,innerHeight-id.offsetHeight)+'px':''}
-  pin();addEventListener('resize',pin);addEventListener('load',pin);
-  if(document.fonts)document.fonts.ready.then(pin);
-})();
-</script>
 <script>
 (function(){
   var el=document.getElementById('typed'), caret=document.getElementById('caret');
