@@ -128,7 +128,7 @@ section+section{margin-top:84px}
 .aw li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:6px 0;font-size:17px}
 .aw .y{font-family:var(--sans);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
 
-@media (min-width:901px){.id{position:sticky;height:100vh;min-height:0;overflow-y:auto;scrollbar-width:none}.id::-webkit-scrollbar{display:none}}
+@media (min-width:901px){.id{position:sticky}}
 @media (max-width:900px){
   body{background:#fff}
   .page{grid-template-columns:1fr;gap:0;padding:0 20px}
@@ -253,6 +253,15 @@ section+section{margin-top:84px}
 </main>
 
 </div>
+<script>
+/* left panel: scroll with the page until its last line is in view, then stay put */
+(function(){
+  var id=document.querySelector('.id');
+  function pin(){id.style.top=innerWidth>900?Math.min(0,innerHeight-id.offsetHeight)+'px':''}
+  pin();addEventListener('resize',pin);addEventListener('load',pin);
+  if(document.fonts)document.fonts.ready.then(pin);
+})();
+</script>
 <script>
 (function(){
   var el=document.getElementById('typed'), caret=document.getElementById('caret');
