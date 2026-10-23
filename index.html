@@ -135,6 +135,19 @@ section+section{margin-top:84px}
 .venue.proj{border-color:#D6CEC4;background:#F7F3EE;color:#6B6258}
 .paper.proj{margin-bottom:48px}
 
+.origin{margin-top:26px;background:var(--bed);border-radius:10px;padding:22px 26px 20px}
+.origin-h{margin:0 0 14px;font-family:var(--sans);font-weight:600;font-size:13.5px;color:var(--head)}
+.origin ol{margin:0;padding:0;list-style:none;counter-reset:o}
+.origin li{counter-increment:o;position:relative;padding-left:30px}
+.origin li+li{margin-top:18px}
+.origin li::before{content:counter(o);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#fff;border:1px solid var(--line);font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--plum);display:flex;align-items:center;justify-content:center}
+.origin h4{margin:0 0 4px;font-family:var(--serif);font-weight:700;font-size:17px;line-height:1.35;color:var(--head)}
+.origin h4 a{color:inherit}
+.origin p{margin:0 0 6px;font-size:16px;line-height:1.55;color:#4a4450}
+.origin .wu{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;font-weight:500}
+.origin .wu svg{width:12px;height:12px}
+@media (max-width:900px){.origin{padding:18px 18px 16px}.origin li{padding-left:28px}}
+
 /* awards */
 .aw{list-style:none;margin:0;padding:0}
 .more{margin:0;display:grid;grid-template-columns:140px 1fr;gap:12px 24px}
@@ -256,9 +269,9 @@ section+section{margin-top:84px}
   </section>
 
   <section aria-labelledby="h-research">
-    <h2 id="h-research">Papers and projects</h2>
+    <h2 id="h-research">Papers</h2>
 
-    <article class="paper">
+    <article class="paper" id="shaping">
       <a class="fig bare" href="https://context-gcg.github.io" aria-label="Project page"><img src="assets/img/gcg_search.gif" alt="A recorded GCG search on Mistral-7B: the 20-token suffix changes over 100 steps, the loss falls, and the answer turns to Asia." width="900" height="930"></a>
       <h3><a href="https://arxiv.org/abs/2610.26236">Shaping the Document, Not the Model: Optimized Suffixes for Context Following</a></h3>
       <p class="find">A 20-token suffix appended to a passage makes the model answer from it on nearly all items it resisted, with the model unchanged.</p>
@@ -269,23 +282,20 @@ section+section{margin-top:84px}
         <a href="https://context-gcg.github.io"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>project</a>
         <a href="https://github.com/giaabaoo/context-gcg"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>code</a>
       </div>
-    </article>
-
-    <article class="paper proj">
-      <h3><a href="https://github.com/giaabaoo/gcg_plus">Can a Suffix Replace an Activation Edit?</a></h3>
-      <p class="find">Removing the refusal direction jailbreaks a model reliably, but it has to be done inside the model at every generation step. I asked whether I could skip that: take the harmful answers the edited model gives, and optimize a GCG suffix that makes the normal model produce them from the input alone. Continuous optimization helped, but every suffix still fell well short of the edit, while simply rewriting the request with persuasion came close. This suggests the model keeps enforcing refusal as it generates, so a suffix cannot switch it off, but changing what the request says can. That pointed me toward studying how the text a model reads can steer it, the idea behind my next paper.</p>
-      <div class="meta">
-        <span class="venue proj">Research project, 2026</span>
-        <a href="https://github.com/giaabaoo/gcg_plus"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>write-up</a>
-      </div>
-    </article>
-
-    <article class="paper proj">
-      <h3><a href="https://github.com/giaabaoo/jailbreak-steering-benchmark">Steering Past Refusal in Activation Space</a></h3>
-      <p class="find">Refusal-direction attacks look strong when judged by keywords, but a model saying &ldquo;Sure, here is&rdquo; is not the same as one that actually answers the harmful request. I tested whether SAE features could point to a harmful subspace and make steering more actionable. They did not: the refusal direction alone worked best, and the SAE directions added noise rather than control.</p>
-      <div class="meta">
-        <span class="venue proj">Research project, 2026</span>
-        <a href="https://github.com/giaabaoo/jailbreak-steering-benchmark"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>write-up</a>
+      <div class="origin">
+        <p class="origin-h">How I got here: two first-year projects at MBZUAI</p>
+        <ol>
+          <li>
+            <h4><a href="https://github.com/giaabaoo/jailbreak-steering-benchmark">Steering Past Refusal in Activation Space</a></h4>
+            <p>Keyword-based evaluation makes refusal-direction attacks look stronger than they are. I tested whether SAE features could reveal a harmful subspace for more actionable steering. They did not: the refusal direction alone worked best, and SAE directions added noise rather than control.</p>
+            <a class="wu" href="https://github.com/giaabaoo/jailbreak-steering-benchmark"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>write-up</a>
+          </li>
+          <li>
+            <h4><a href="https://github.com/giaabaoo/gcg_plus">Can a Suffix Replace an Activation Edit?</a></h4>
+            <p>Removing the refusal direction jailbreaks a model, but only from inside it, at every generation step. I asked whether an optimized suffix could get the same harmful answers from the input alone. It fell well short, while rewriting the request with persuasion strategies came close. I carried the same tools, GCG suffixes on the input and judge-based scoring, into this paper on context following, where the suffix does not have to fight safety training and works well.</p>
+            <a class="wu" href="https://github.com/giaabaoo/gcg_plus"><svg class="i" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>write-up</a>
+          </li>
+        </ol>
       </div>
     </article>
 
