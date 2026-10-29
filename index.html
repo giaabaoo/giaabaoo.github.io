@@ -58,7 +58,8 @@ h1{font-family:var(--serif);font-weight:400;font-size:56px;line-height:.98;lette
 .now{font-size:28px;line-height:1.35;color:var(--ink);margin:0 0 22px;min-height:2.7em;max-width:22em}
 .typed{color:var(--head)}
 .caret{display:inline-block;width:2px;height:1em;background:var(--plum);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite}
-.caret.done{animation:blink 1s steps(1) 3 forwards}
+.caret.done{animation:blink 1s steps(1) infinite}
+@media (prefers-reduced-motion: reduce){.caret{animation:none}}
 @keyframes blink{50%{opacity:0}}
 .intro h2{margin-bottom:12px}
 .intro .h-why{margin-top:4px}
@@ -266,7 +267,7 @@ section+section{margin-top:84px}
     <h2>Current work</h2>
     <p class="now"><span class="sr">I am studying how to control the way language models use context.</span><span aria-hidden="true">I am <span class="typed" id="typed" data-text="studying how to control the way language models use context."></span><span class="caret" id="caret"></span></span></p>
     <h2 class="h-why">Broad research interests</h2>
-    <p class="why">As language models become more capable, it matters more that we can understand and correct their behaviour so that it stays aligned with human values. This is what draws me to <b class="kw">alignment</b>, which I work on with a focus on <b class="kw">AI safety</b> in Prof. Timothy Baldwin's group at MBZUAI. During my summer visit to Prof. Isabelle Augenstein's group, we found that a short optimized suffix in the input can steer whether a model follows the given context. I want to understand how such behaviours are represented in a model's latent space, and whether <b class="kw">mechanistic control</b> and <b class="kw">causal representation learning</b> can give us reliable handles on them.</p>
+    <p class="why">As language models become more capable, it matters more that we can understand and correct their behaviour so that it stays aligned with human values. This is what draws me to <b class="kw">alignment</b>, which I work on with a focus on <b class="kw">AI safety</b> in Prof. Timothy Baldwin's group at MBZUAI. During my summer visit to Prof. Isabelle Augenstein's group, we found that a short optimized suffix hidden in a document can make a model trust that document over what it knows (<a href="https://arxiv.org/abs/2610.26236">paper</a>). I want to understand how such behaviours are represented in a model's latent space, and whether <b class="kw">mechanistic interpretability</b> and <b class="kw">representation engineering</b> can give us reliable handles on them.</p>
   </section>
 
   <section aria-labelledby="h-research">
